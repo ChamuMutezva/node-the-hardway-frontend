@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Form from '../components/Form'
 import EditForm from '../components/EditForm'
-type Note = {
-    _id: string,
-    id: string,
-    content: string,
-    date: string,
-    important: boolean,
-}
+import { Note } from '../types/NotesType'
+import { DataContext } from '../context/DataContext'
+
 function Home() {
+    // const { notes, dispatch } = useNotesHooks()
     const [notes, setNotes] = useState<Note[]>([])
     const [showNote, setShowNote] = useState(false)
     const [newNote, setNewNote] = useState("")
-    const [isEditing, setIsEditing] = useState(false)
+    // const [isEditing, setIsEditing] = useState(false)
     const [noteToEdit, setNoteToEdit] = useState<Note>()
+    const { isEditing, setIsEditing } = useContext(DataContext)
 
     useEffect(() => {
         const fetchNotes = async () => {
@@ -24,11 +22,10 @@ function Home() {
             console.log("no data")
             if (response.ok) {
                 setNotes(data)
-                console.log(`notes here`)
             }
         }
         fetchNotes()
-    }, [])
+    }, [isEditing])
 
     useEffect(() => {
         console.log(noteToEdit)
@@ -52,7 +49,9 @@ function Home() {
         })
 
         setNoteToEdit(await response.json())
-        setIsEditing(true)
+        if (setIsEditing) {
+            setIsEditing(!isEditing)
+        }
         console.log(id)
     }
 
@@ -68,16 +67,17 @@ function Home() {
 
     console.log("home")
     return (
-        <div className="container">
+        <div className={`container home ${isEditing ? "home-edit" : ""}`}>
             {isEditing && noteToEdit ?
                 <EditForm note={noteToEdit} /> :
                 <Form />}
             <h2>List of notes</h2>
             <div className="notes">
-                {notes && notes.map(note => {
+
+                {notes && notes.map((note: { _id: string; content: string }) => {
                     return <div key={note._id} className="container-note">
                         <p className="note-text">{note.content}</p>
-                        <button className="btn" onClick={() => handleGetNote(note._id)}>Edit</button>
+                        <button className="btn" onClick={() => handleGetNote(note._id)}>Edit/Delete</button>
                     </div>
                 }
                 )}
@@ -87,3 +87,4 @@ function Home() {
 }
 
 export default Home
+

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { DataContext } from '../context/DataContext'
+import Return from '../assets/arrow-rotate-left-solid.svg'
 
 function EditForm(props: any) {
     const [content] = useState("")
@@ -6,12 +8,19 @@ function EditForm(props: any) {
     const [date] = useState(props.note.date)
     const [important] = useState(props.note.important)
     const [error, setError] = useState(null)
+    const { isEditing, setIsEditing } = useContext(DataContext)
 
     const [editText, setEditText] = useState(props.note.content)
     const handleEdit = (evt: React.FormEvent<HTMLInputElement>) => {
         const target = evt.target as HTMLInputElement;
         setEditText(target.value)
-        // console.log(target)
+    }
+
+    const handleReturn = () => {
+        console.log('return to main page without changes')
+        if (setIsEditing) {
+            setIsEditing(!isEditing)
+        }
     }
 
     const note = {
@@ -40,11 +49,15 @@ function EditForm(props: any) {
         if (response.ok) {
             setError(null)
         }
+
+        if (setIsEditing) {
+            setIsEditing(!isEditing)
+        }
     }
 
     const handleDeleteNote = async (idSearch: string) => {
         const response = await fetch("http://localhost:7821/api/notes/" + idSearch, {
-            method: "DELETE",           
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }
@@ -61,7 +74,10 @@ function EditForm(props: any) {
     }
     return (
         <div className={`container-edit`}>
-            <p className="current-note">{props.note.content}</p>
+            <button className="btn-return" onClick={handleReturn}>
+                <img src={Return} alt="" />
+                Return
+            </button>
             <div className="text-container">
                 <label htmlFor="edit">
                     Edit note
@@ -75,8 +91,8 @@ function EditForm(props: any) {
                 />
             </div>
             <div className="btn-container">
-                <button type="button" 
-                onClick={() => handleChangedNote(props.note._id)}>
+                <button type="button"
+                    onClick={() => handleChangedNote(props.note._id)}>
                     Update note</button>
                 <button type="button"
                     className="btn"
