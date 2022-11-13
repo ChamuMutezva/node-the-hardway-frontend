@@ -16,7 +16,7 @@ function Home() {
     useEffect(() => {
         const fetchNotes = async () => {
             console.log("asyns data")
-            const response = await fetch("http://localhost:7821/api/notes")
+            const response = await fetch("http://localhost:3001/api/notes")
             const data: Note[] = await response.json()
             console.log(data)
             console.log("no data")
@@ -40,7 +40,7 @@ function Home() {
 
     const handleGetNote = async (id: string) => {
         setShowNote(true)
-        const response = await fetch("http://localhost:7821/api/notes/" + id, {
+        const response = await fetch("http://localhost:3001/api/notes/" + id, {
             method: 'GET',
             //body: JSON.stringify(...note),
             headers: {

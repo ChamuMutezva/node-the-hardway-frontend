@@ -24,7 +24,7 @@ function Form() {
             date
         }
 
-        const response = await fetch("http://localhost:7821/api/notes", {
+        const response = await fetch("http://localhost:3001/api/notes", {
             method: "POST",
             body: JSON.stringify(note),
             headers: {
