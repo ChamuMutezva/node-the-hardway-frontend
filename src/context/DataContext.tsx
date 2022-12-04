@@ -4,7 +4,7 @@ interface DataProviderProps {
     children: React.ReactNode
 }
 const defaultState = {
-   isEditing: false
+   isEditing: true
 }
 interface useEditProps {
     isEditing: boolean,
@@ -14,7 +14,7 @@ interface useEditProps {
 export const DataContext = createContext<useEditProps>(defaultState)
 
 export const DataProvider = ({ children }: DataProviderProps) => {
-    const [isEditing, setIsEditing] = useState<boolean>(false)
+    const [isEditing, setIsEditing] = useState<boolean>(true)
   
     return (
         <DataContext.Provider value={{ isEditing , setIsEditing}}>
