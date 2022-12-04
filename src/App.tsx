@@ -16,7 +16,7 @@ function App() {
     <div className="App">
 
       <Authenticator>
-        {({ signOut, user }) => (
+        {({ signOut }) => (
 
           <BrowserRouter>          
             <Navbar />
