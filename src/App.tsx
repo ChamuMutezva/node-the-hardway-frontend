@@ -18,7 +18,7 @@ function App() {
       <Authenticator>
         {({ signOut, user }) => (
 
-          <BrowserRouter>
+          <BrowserRouter>          
             <Navbar />
             <Login />
             <div className="pages">
@@ -26,6 +26,7 @@ function App() {
                 <Route path='/' element={<Home />} />
               </Routes>
             </div>
+            <button onClick={signOut}>Sign out</button>
           </BrowserRouter>
 
         )}

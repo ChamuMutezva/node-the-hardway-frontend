@@ -12,19 +12,19 @@ function Home() {
     // const [isEditing, setIsEditing] = useState(false)
     const [noteToEdit, setNoteToEdit] = useState<Note>()
     const { isEditing, setIsEditing } = useContext(DataContext)
-
-    useEffect(() => {
-        const fetchUser = async () => {
-            console.log("asyns data")
-            const response = await fetch("http://localhost:3001/api/signup")
-            const data = await response.json()
-            console.log(data)
-            console.log("no data")
-           
-        }
-        fetchUser()
-    }, [])
-
+    /*
+        useEffect(() => {
+            const fetchUser = async () => {
+                console.log("asyns data")
+                const response = await fetch("http://localhost:3001/api/signup")
+                const data = await response.json()
+                console.log(data)
+                console.log("no data")
+               
+            }
+            fetchUser()
+        }, [])
+    */
     useEffect(() => {
         const fetchNotes = async () => {
             console.log("asyns data")
