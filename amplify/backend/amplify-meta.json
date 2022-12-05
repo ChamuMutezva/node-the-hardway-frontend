@@ -38,11 +38,6 @@
           "EMAIL"
         ]
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-223229-deployment/amplify-cfn-templates/auth/frontenddc0e8eef-cloudformation-template.json",
-        "logicalId": "authfrontenddc0e8eef"
-      },
-      "lastPushTimeStamp": "2022-12-04T22:20:00.768Z",
       "output": {
         "UserPoolId": "us-east-2_N0izUGqZt",
         "AppClientIDWeb": "1amd3fp8v86d7amd1eumms7ofq",
@@ -52,7 +47,11 @@
         "IdentityPoolName": "frontenddc0e8eef_identitypool_dc0e8eef__dev",
         "UserPoolName": "frontenddc0e8eef_userpool_dc0e8eef"
       },
-      "lastPushDirHash": "tuV5XZl+pSvn7ug7nwH7kKpllgE="
+      "lastPushTimeStamp": "2022-12-05T17:24:31.357Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-223229-deployment/amplify-cfn-templates/auth/frontenddc0e8eef-cloudformation-template.json",
+        "logicalId": "authfrontenddc0e8eef"
+      }
     }
   }
 }
