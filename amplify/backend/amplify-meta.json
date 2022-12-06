@@ -37,20 +37,6 @@
         "verificationMechanisms": [
           "EMAIL"
         ]
-      },
-      "output": {
-        "UserPoolId": "us-east-2_N0izUGqZt",
-        "AppClientIDWeb": "1amd3fp8v86d7amd1eumms7ofq",
-        "AppClientID": "74b9coovep91tr0em3l070fi62",
-        "IdentityPoolId": "us-east-2:62de017d-e533-48e0-af2d-4bcc3f59878d",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:938301051472:userpool/us-east-2_N0izUGqZt",
-        "IdentityPoolName": "frontenddc0e8eef_identitypool_dc0e8eef__dev",
-        "UserPoolName": "frontenddc0e8eef_userpool_dc0e8eef"
-      },
-      "lastPushTimeStamp": "2022-12-05T17:24:31.357Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-223229-deployment/amplify-cfn-templates/auth/frontenddc0e8eef-cloudformation-template.json",
-        "logicalId": "authfrontenddc0e8eef"
       }
     }
   }
