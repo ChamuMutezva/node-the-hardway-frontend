@@ -17,6 +17,9 @@
           "appId": "d33eh1213qszdc",
           "type": "manual"
         }
+      },
+      "auth": {
+        "frontend0ac7e9c1": {}
       }
     }
   }
