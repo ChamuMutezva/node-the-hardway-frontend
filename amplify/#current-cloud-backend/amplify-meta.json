@@ -1,58 +1,29 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplifyce5dda7bf97c4-staging-162710-authRole",
-      "UnauthRoleArn": "arn:aws:iam::938301051472:role/amplify-amplifyce5dda7bf97c4-staging-162710-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::938301051472:role/amplify-amplifyce5dda7bf97c4-staging-162710-authRole",
+      "AuthRoleName": "amplify-frontend-dev-222422-authRole",
+      "UnauthRoleArn": "arn:aws:iam::938301051472:role/amplify-frontend-dev-222422-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::938301051472:role/amplify-frontend-dev-222422-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-amplifyce5dda7bf97c4-staging-162710-deployment",
-      "UnauthRoleName": "amplify-amplifyce5dda7bf97c4-staging-162710-unauthRole",
-      "StackName": "amplify-amplifyce5dda7bf97c4-staging-162710",
-      "StackId": "arn:aws:cloudformation:us-east-2:938301051472:stack/amplify-amplifyce5dda7bf97c4-staging-162710/80e8a930-73f0-11ed-b5ea-028ba86a8aba",
-      "AmplifyAppId": "d2h0uej9jjefv2"
+      "DeploymentBucketName": "amplify-frontend-dev-222422-deployment",
+      "UnauthRoleName": "amplify-frontend-dev-222422-unauthRole",
+      "StackName": "amplify-frontend-dev-222422",
+      "StackId": "arn:aws:cloudformation:us-east-2:938301051472:stack/amplify-frontend-dev-222422/2774c3f0-766d-11ed-9e8b-028b0ef64aaa",
+      "AmplifyAppId": "d33eh1213qszdc"
     }
   },
-  "auth": {
-    "nodethehardwayfronte6fae9d32": {
-      "service": "Cognito",
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false,
-      "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
-      },
+      "type": "manual",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifyce5dda7bf97c4-staging-162710-deployment/amplify-cfn-templates/auth/nodethehardwayfronte6fae9d32-cloudformation-template.json",
-        "logicalId": "authnodethehardwayfronte6fae9d32"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-222422-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2022-12-07T04:42:10.929Z",
-      "output": {
-        "UserPoolId": "us-east-2_2mPMqnAzI",
-        "AppClientIDWeb": "780auokakk9bodi7ipi7lt1vo7",
-        "AppClientID": "443i4tfgutcp9s9oi0ilks3p3n",
-        "IdentityPoolId": "us-east-2:20c8a588-33d4-493e-9dc5-55f45b5ddafd",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:938301051472:userpool/us-east-2_2mPMqnAzI",
-        "IdentityPoolName": "nodethehardwayfronte6fae9d32_identitypool_6fae9d32__staging",
-        "UserPoolName": "nodethehardwayfronte6fae9d32_userpool_6fae9d32"
-      },
-      "lastPushDirHash": "/GUgY1MiQARpkYbgjtfQYY0IfIY="
+      "lastPushTimeStamp": "2022-12-07T20:27:38.122Z",
+      "output": {},
+      "lastPushDirHash": "1YSxnToQd8WLS90B0pIrGfAlx+w="
     }
   }
 }
