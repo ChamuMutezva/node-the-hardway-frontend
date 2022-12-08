@@ -6,7 +6,7 @@ import '@aws-amplify/ui-react/styles.css';
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import './App.css'
-import Login from './form/Login'
+// import Login from './form/Login'
 
 import awsExports from './aws-exports';
 Amplify.configure(awsExports);
@@ -20,7 +20,7 @@ function App() {
 
           <BrowserRouter>          
             <Navbar />
-            <Login />
+          {/*  <Login /> */}
             <div className="pages">
               <Routes>
                 <Route path='/' element={<Home />} />
