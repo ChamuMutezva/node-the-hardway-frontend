@@ -8,7 +8,7 @@ import Navbar from './components/Navbar'
 import './App.css'
 // import Login from './form/Login'
 
-import awsExports from './aws-exports';
+import awsExports from './aws-exports-edit';
 Amplify.configure(awsExports);
 function App() {
 
