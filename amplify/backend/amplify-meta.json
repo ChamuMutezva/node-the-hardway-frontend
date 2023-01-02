@@ -21,7 +21,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-222422-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2022-12-09T18:41:46.659Z",
+      "lastPushTimeStamp": "2023-01-02T23:11:22.731Z",
       "output": {},
       "lastPushDirHash": "1YSxnToQd8WLS90B0pIrGfAlx+w="
     }
@@ -56,7 +56,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-frontend-dev-222422-deployment/amplify-cfn-templates/auth/frontend0ac7e9c1-cloudformation-template.json",
         "logicalId": "authfrontend0ac7e9c1"
       },
-      "lastPushTimeStamp": "2022-12-09T18:41:46.675Z",
+      "lastPushTimeStamp": "2023-01-02T23:11:22.736Z",
       "output": {
         "UserPoolId": "us-east-2_qu2OEJQlN",
         "AppClientIDWeb": "jvmh35l5i3iha50uac6hd7co5",
