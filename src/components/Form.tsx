@@ -7,6 +7,7 @@ function Form() {
     const [date, setDate] = useState("")
     const [important, setImportant] = useState(false)
     const [error, setError] = useState(null)
+    const API_ENDPOINT = "https://cooperative-tuna-spacesuit.cyclic.app/api/notes/"
 
     useEffect(() => {
         setImportant(true)
@@ -24,7 +25,7 @@ function Form() {
             date
         }
 
-        const response = await fetch("http://localhost:3001/api/notes", {
+        const response = await fetch(API_ENDPOINT, {
             method: "POST",
             body: JSON.stringify(note),
             headers: {

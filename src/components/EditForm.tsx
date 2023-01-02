@@ -9,6 +9,7 @@ function EditForm(props: any) {
     const [important] = useState(props.note.important)
     const [error, setError] = useState(null)
     const { isEditing, setIsEditing } = useContext(DataContext)
+    const API_ENDPOINT = "https://cooperative-tuna-spacesuit.cyclic.app/api/notes/"
 
     const [editText, setEditText] = useState(props.note.content)
     const handleEdit = (evt: React.FormEvent<HTMLInputElement>) => {
@@ -32,7 +33,7 @@ function EditForm(props: any) {
 
     const handleChangedNote = async (idSearch: string) => {
         console.log(idSearch)
-        const response = await fetch("http://localhost:3001/api/notes/" + idSearch, {
+        const response = await fetch(API_ENDPOINT + idSearch, {
             method: "PATCH",
             body: JSON.stringify({ ...note, content: editText }),
             headers: {
@@ -56,7 +57,7 @@ function EditForm(props: any) {
     }
 
     const handleDeleteNote = async (idSearch: string) => {
-        const response = await fetch("http://localhost:3001/api/notes/" + idSearch, {
+        const response = await fetch(API_ENDPOINT + idSearch, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
