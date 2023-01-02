@@ -12,6 +12,7 @@ function Home() {
     // const [isEditing, setIsEditing] = useState(false)
     const [noteToEdit, setNoteToEdit] = useState<Note>()
     const { isEditing, setIsEditing } = useContext(DataContext)
+    const API_ENDPOINT = "https://cooperative-tuna-spacesuit.cyclic.app/api/notes/"
     /*
         useEffect(() => {
             const fetchUser = async () => {
@@ -28,7 +29,7 @@ function Home() {
     useEffect(() => {
         const fetchNotes = async () => {
             console.log("asyns data")
-            const response = await fetch("http://localhost:3001/api/notes")
+            const response = await fetch(API_ENDPOINT)
             const data: Note[] = await response.json()
             console.log(data)
             console.log("no data")
@@ -52,7 +53,7 @@ function Home() {
 
     const handleGetNote = async (id: string) => {
         setShowNote(true)
-        const response = await fetch("http://localhost:3001/api/notes/" + id, {
+        const response = await fetch(API_ENDPOINT + id, {
             method: 'GET',
             //body: JSON.stringify(...note),
             headers: {
